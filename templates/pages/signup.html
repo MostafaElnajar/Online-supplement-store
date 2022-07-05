@@ -1,0 +1,45 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+	
+<head>
+    <title>Signup</title>
+    </head>
+
+<main>
+<div class = "mar">
+
+<div  id="form">
+    
+
+    <h3>Complete the Sign-Up Form</h3>
+<form  method="POST" class="form-grid"> 
+    {% csrf_token %} 
+    <fieldset>
+        
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname" id="fname" >
+        
+        <label for="fName">Last Name:</label>
+        <input type="text" name="lname" id="lname" >
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" >
+        
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" >
+
+        <label for="psw">Password</label>
+        <input type="password" placeholder="Enter Password" name="password" >
+    
+    </fieldset>
+    <!--<input type="submit" id="submit" value="Sign-Up" class="btn">-->
+    <button type="submit" id="submit" style= height:10% > <span><a style="color: black;"   class="button" > Sign-up</a></span></button>
+
+
+    
+    <!--<input type="submit" id="submit" value="Sign-Up" class="btn">r-->
+    <!--<input type="submit" value="save">-->
+</div>
+</main>
+{% endblock %} 

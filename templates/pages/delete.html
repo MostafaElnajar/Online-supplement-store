@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
+<head>
+  <title>Delete</title>
+  </head>
+  <div class = "mar">
+
+
+    <div class="container">
+        <input type="button" value = "Do you really want to delete this product ?" class="btn ">
+
+      <form method="POST" >
+        {% csrf_token %}
+              {{form}}
+              <input type="submit" value = "Delete " class="btn " >
+              <a href="{% url 'gain' %}">
+              <input type="button" value = "Return to previous page" class="btn ">
+                  
+        </form>
+ 
+</div>
+</div>
+{% endblock %}   

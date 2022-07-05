@@ -1,0 +1,99 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
+<head>
+     <title>Amino</title>
+     </head>
+
+<div id="hero" class="amino_background">
+    <img src="{% static 'images/amino energy.jpg' %}" alt="amino">
+</div>
+
+
+<main>
+
+<h1>Amino Energy and Energy Supplements</h1>
+<p> <strong>Optimum Nutrition Amino energy and energy supplements</strong> are those health supplements build up the immune system of human body.
+     It contains energy in the form of caffeine along with free form of amino acids that help for the proper growth.
+     Human immune system is quite sensitive so it needs extra care. With <strong>amino energy </strong>supplements you can add to the proper growth of your body.</p>	
+<br>
+<p>At Nfitness you can navigate a variety of <b>Optimum Nutrition Amino</b> Energy supplements.
+     They rank at the top of all bodybuilding supplements. Our <b>amino energy</b> supplements have a healthy mix of proteins, carbohydrates, and proper nutrients element that make bodybuilding an easy task. Amino energy is the supplement that contains natural energy in the form of various growth functionalities in your body. 
+    <b>Amino energy</b> and energy supplements dealer makes the product from the perspective of customers so that they can choose easily.</p>
+<br>
+<p>  <b>Our Optimum Nutrition amino energy and energy supplements</b>  are present in the form of powder as well as liquid. We assure positive results with our amino energy supplements.
+     They are rich in basic bodybuilding ingredients such as carbohydrates, proteins, and energy and necessary immune constituents. 
+     As a result you have higher chances of body growth with amino supplements.</p>
+     <BR>
+    
+    <h4 style = "color:#04AA6D ;"> SOME RECOMMENDED AMINO PRODUCT </h4>
+
+     <div class = "products">
+          <div class = "conttainer">
+
+              <a href="{%url 'add'  %}">
+                  <input type="submit" value = "Add product" class="btn ">
+                  </a>
+              <div class = "product-items">
+                  <!-- single product -->
+                  {% for pro in am %}
+                  <div class = "product">
+                      <div class = "product-btns">
+                          <a href= "{% url 'update' pro.id %}" >
+                          <button type = "button" class = "btn-cart"> Update
+                              
+                          </button>
+                          </a>
+                          <a href= "{% url 'delete' pro.id %}" >
+                          <button type = "button" class = "btn-buy"> Delete
+                              
+                          </button>
+                          </a>
+                      </div>
+                      <div class = "product-content">
+                          <div class = "product-img">
+                              {% if pro.image %}
+                              <img src="{{pro.image.url}}" alt = "product image">
+                              {% endif %}
+                          </div>
+                          <div class = "product-btns">
+                              <a href= "{% url 'payment' %}" >
+                              <button type = "button" class = "btn-buy"> buy now
+                                  <span><i class = "fas fa-shopping-cart"></i></span>
+                              </button>
+                              </a>
+                          </div>
+                      </div>
+  
+                      <div class = "product-info">
+                          <div class = "product-info-top">
+                              <h2 class = "sm-title">{{pro.name}}</h2>
+                              <div class = "rating">
+                                  <span><i class = "fas fa-star"></i></span>
+                                  <span><i class = "fas fa-star"></i></span>
+                                  <span><i class = "fas fa-star"></i></span>
+                                  <span><i class = "fas fa-star"></i></span>
+                                  <span><i class = "far fa-star"></i></span>
+                              </div>
+                          </div>
+                          <a href = "#" class = "product-name">{{pro.content}}</a>
+                          <p class = "product-price">$ 1500.000</p>
+                          <p class = "product-price">$ {{pro.price}}</p>
+                      </div>
+                      <div class = "off-info">
+                          <h2 class = "sm-title">50% off</h2>
+                      </div>
+                  </div>
+                  {% endfor %}
+                  <!-- end of single product -->
+                 
+              </div>
+          </div>
+      </div>
+      
+    
+    
+    </main>
+
+    {% endblock %}       

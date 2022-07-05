@@ -1,0 +1,91 @@
+
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
+
+<head>
+<title>about</title>
+</head>		
+<main>
+		
+<div class = "mar"> 
+    <video width="70%" controls poster="{% static 'images/999.jpg' %}">
+        <source  src="{% static 'media/about.mp4' %}" type='video/mp4' >
+        <source src="{% static 'media/about.webm' %}" type='video/webm' >
+        
+        <p>Your browser does not support the video element.</p>
+    </video>
+
+
+
+    <div class="tablet-desktop">
+
+        <h1>Welcome to The Supplement Shop</h1>
+        <p>The Supplement Shop “NFTNESS” is the premier supplements distributor in Egypt and the Middle East Region.</p>
+        
+        <p>Was established in April 2022. Since then it has grown into a leading Retailer in Egypt.</p>
+        
+        
+    
+    </div>
+    <BR>
+<H1>MAIN CATEGORIES IN OUR WEBSITE</H1>
+<BR>
+<div class="tablet-desktop">
+<section id="weights">
+<h1>Weight Gaining</h1>
+<img src="{% static 'images/gain.jpeg' %}" alt="Weight Gaining" class="round">
+<p>Weight gainers are high-calorie products that contain large amounts of carbohydrates and protein. 
+    These products can help you gain weight if added to your normal diet, but they are not better than eating more real food.</p>
+    <P> <b> <marquee direction="right">Some recommended products </marquee></b> </P>
+<ul >
+    <li>Dymatize Super Mass Gainer</li>
+    <li>MusclePharm Combat XL</li>
+    <li>Optimum Nutrition Serious Mass</li>
+</ul>
+
+</section> 
+
+<section id="cardio">
+
+    <h1>Weight Loss </h1>
+    <img src="{% static 'images/lose-weight.png' %}" alt="Weight Loss" class="round">
+    <p>Weight-loss supplements contain many ingredients—like herbs, fiber, and minerals—in different amounts and in many combinations. 
+        Sold in forms such as capsules, liquids, and powders, some products have dozens of ingredients</p> 
+        
+            <P> <b> <marquee direction="right">Some recommended products </marquee></b> </P>
+
+    <ul >
+        <li>Treadmills</li>
+        <li>Elliptical Machines</li>
+        <li>Exercise Bikes</li>
+    </ul>
+    
+</section>
+
+<section id="training">
+
+    <h1>Accessories</h1>
+    <img src="{% static 'images/ACC.jpg' %}" alt="Accessories" class="round">
+    <p>Find high quality products from us Get a direct quote now! Production control, best service, most famous.
+         Save big when you buy gym equipment from Nfitness. Get fast shipping for your orders.</p>
+         <BR>
+         <P> <b> <marquee direction="right">Some recommended products </marquee></b> </P>
+    <ul>
+        <li>fitness gym belts weightlifting belt</li>
+        <li>Resistance Workout Straps</li>
+        <li>Grip Pads with Wrist Wraps</li>
+    </ul>
+    
+</section>
+</div>
+
+<section id="exercises" >
+
+    </section>
+</div>    
+</main>
+
+
+{% endblock %}    

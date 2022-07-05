@@ -1,0 +1,93 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
+<head>
+    <title>Protein</title>
+    </head>
+
+<div id="hero" class="amino_background">
+    <img src="{% static 'images/b.jpg' %}   " alt="protein">
+</div>
+
+<main>
+    <h1>Nutrition and Protein Bar</h1>
+    <p> <b>Nutrition and protein bar</b> is the most sought way to add carbs, 
+        proteins, and vitamins to your diet. From curbing appetite, 
+        to fueling a workout, and supporting muscle repair, <b>protein bars</b> manage it all.</p>
+    <p> Nfitness brings to you exclusively such nutrition and <b>Protein bars</b> that have been formulated to provide a high protein and low sugar.
+         Such products are ideal snacks for athletes and bodybuilders.
+         The aim is to provide athletes, sports teams and gym with a convenient snack alternative to a sugary shake.</p>	
+    <p> <b>Nutrition and protein bars</b> are an ideal source of micronutrients, like calcium, vitamin B, potassium, and iron.
+         On Nfitness you will have umpteen kinds of nutrition and protein bars in flavours like pumpkin, nut butter, cocoa, chocolate, and fruit.
+         They have the nutrition of milk, dairy product, soy, and peanuts and do not cause you a hefty amount. Grab a bite and get instant energy</p>
+         <BR>
+
+         <h4 style = "color:#04AA6D ;"> SOME RECOMMENDED AMINO PRODUCT </h4>
+
+     <div class = "products">
+          <div class = "conttainer">
+
+              <a href="{%url 'add'  %}">
+                  <input type="submit" value = "Add product" class="btn ">
+                  </a>
+              <div class = "product-items">
+                  <!-- single product -->
+                  {% for pro in pro %}
+                  <div class = "product">
+                      <div class = "product-btns">
+                          <a href= "{% url 'update' pro.id %}" >
+                          <button type = "button" class = "btn-cart"> Update
+                              
+                          </button>
+                          </a>
+                          <a href= "{% url 'delete' pro.id %}" >
+                          <button type = "button" class = "btn-buy"> Delete
+                              
+                          </button>
+                          </a>
+                      </div>
+                      <div class = "product-content">
+                          <div class = "product-img">
+                              {% if pro.image %}
+                              <img src="{{pro.image.url}}" alt = "product image">
+                              {% endif %}
+                          </div>
+                          <div class = "product-btns">
+                              <a href= "{% url 'payment' %}" >
+                              <button type = "button" class = "btn-buy"> buy now
+                                  <span><i class = "fas fa-shopping-cart"></i></span>
+                              </button>
+                              </a>
+                          </div>
+                      </div>
+  
+                      <div class = "product-info">
+                          <div class = "product-info-top">
+                              <h2 class = "sm-title">{{pro.name}}</h2>
+                              <div class = "rating">
+                                  <span><i class = "fas fa-star"></i></span>
+                                  <span><i class = "fas fa-star"></i></span>
+                                  <span><i class = "fas fa-star"></i></span>
+                                  <span><i class = "fas fa-star"></i></span>
+                                  <span><i class = "far fa-star"></i></span>
+                              </div>
+                          </div>
+                          <a href = "#" class = "product-name">{{pro.content}}</a>
+                          <p class = "product-price">$ 1500.000</p>
+                          <p class = "product-price">$ {{pro.price}}</p>
+                      </div>
+                      <div class = "off-info">
+                          <h2 class = "sm-title">50% off</h2>
+                      </div>
+                  </div>
+                  {% endfor %}
+                  <!-- end of single product -->
+                 
+              </div>
+          </div>
+      </div>
+
+</main>
+
+{% endblock %}   

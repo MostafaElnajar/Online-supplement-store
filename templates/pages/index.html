@@ -1,0 +1,45 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
+<head>
+ <title>Home</title>
+    </head>
+
+<div id="hero" class="tablet-desktop">
+    <img src="{% static 'images/last.jpg' %}" alt="supplement" class= 'center'>		
+</div>
+    <main>
+        
+    
+    <div class="tablet-desktop">
+        <p>Welcome to Nfitness. Our mission is to help our clients meet their fitness and nutrition goals by creating supplement store system .</p> 
+        <p>If you have struggled with getting healthy and need the motivation and resources to make a healthy lifestyle change,
+             contact us today. Our mission is providing all food supplements to deliver nutrients that may not be consumed in sufficient quantities.</p> 
+        <p>Food supplements can be vitamins, minerals, amino acids, fatty acids, and other substances delivered in the form of pills,
+             tablets, capsules, liquid, etc. <span class="action">GET YOUR SUPPLEMENTS NOW! </span></p>
+    
+    </div>
+    
+    <div class="grid">
+    
+    <figure class="frame">
+        <span> <a href="{% url 'amino' %}"><img src="{% static 'images/Amino.jpg' %}" alt="group of fitness people"></a></span>
+        <figcaption class="pic-text">Amino Energy</figcaption>
+    </figure>
+    
+    <figure class="frame">
+        <span><a href="{% url 'multivitamins' %}"><img src="{% static 'images/multivitamins.jpg' %}" alt="healthy food in the shape of a heart"></a></span>
+        <figcaption class="pic-text">Multivitamins</figcaption>
+    </figure>
+    
+    <figure class="frame">
+        <span> <a href="{% url 'protein' %}"><img src="{% static 'images/protein.jpg' %}" alt="personal trainer with a clipboard"></a></span>
+        <figcaption class="pic-text">Protein bar</figcaption>
+    </figure>
+    
+    </div>
+    
+    </main>
+
+{% endblock %}    

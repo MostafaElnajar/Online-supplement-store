@@ -1,0 +1,79 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
+<head>
+    <title>weight_loss</title>
+    </head>
+
+    <div class = "mar">
+        <div class = "products">
+            <div class = "conttainer">
+                <form method = "GET" action = "{% url 'gain' %}">
+                    <input type="text" name="search_name" placeholder="Search..">
+                </form>
+                <a href="{%url 'add'  %}">
+                    <input type="submit" value = "Add product" class="btn ">
+                    </a>
+                <div class = "product-items">
+                    <!-- single product -->
+                    {% for pro in loss %}
+                    <div class = "product">
+                        <div class = "product-btns">
+                            <a href= "{% url 'update' pro.id %}" >
+                            <button type = "button" class = "btn-cart"> Update
+                                
+                            </button>
+                            </a>
+                            <a href= "{% url 'delete' pro.id %}" >
+                            <button type = "button" class = "btn-buy"> Delete
+                                
+                            </button>
+                            </a>
+                        </div>
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                {% if pro.image %}
+                                <img src="{{pro.image.url}}" alt = "product image">
+                                {% endif %}
+                            </div>
+                            <div class = "product-btns">
+                                <a href= "{% url 'payment' %}" >
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                                </a>
+                            </div>
+                        </div>
+    
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">{{pro.name}}</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">{{pro.content}}</a>
+                            <p class = "product-price">$ 1500.000</p>
+                            <p class = "product-price">$ {{pro.price}}</p>
+                        </div>
+                        <div class = "off-info">
+                            <h2 class = "sm-title">50% off</h2>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- end of single product -->
+                   
+                </div>
+            </div>
+        </div>
+    
+    
+    
+    </div> 
+
+    {% endblock %}   

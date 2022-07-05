@@ -1,0 +1,105 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
+
+<head>
+    <title>Multivitamins</title>
+    </head>
+
+<div id="hero" class="amino_background">
+    <img src="{% static 'images/multi.jpg' %}" alt="Multivitamins">
+</div>
+
+<main>
+<h1>Multivitamins Nutrition Supplements</h1>
+<p>Often called as multis, multivitamins are a combination of vitamins and supplements.
+     They are basically <b>multivitamin nutrition supplements</b>, manufactured to serve as right minerals, vitamins,
+      and other nutritional elements to the consumers. Worldwidenutrition1.com stores the <b>Best Multivitamin For Men Bodybuilding</b>, 
+      in the form of tablets, liquids, capsules, powders and even injectable formulations. 
+     The reason why multivitamin nutrition supplements are on rise is that they prevent heart disease, cancer,
+     and other ailments along with providing nutrition. Their regular supplementation is therefore very necessary. 
+    <b>Multivitamins supplements</b> certainly the most popular and most useful supplements all over the world. 
+    Human body needs <b>multivitamins</b> for maintenance, reproduction, growth, and regulation.</p>
+    <br>
+ <p> <b>Multivitamins nutrition supplements</b> contain a variety of ingredients such as fatty acids, amino acids, and tons of minerals.
+     Start consuming them on regular basis and you will experience immense benefits.</p>	
+    
+     <BR>
+    
+        <h4 style = "color:#04AA6D ;"> SOME RECOMMENDED AMINO PRODUCT </h4>
+    
+         <div class = "products">
+              <div class = "conttainer">
+    
+                  <a href="{%url 'add'  %}">
+                      <input type="submit" value = "Add product" class="btn ">
+                      </a>
+                  <div class = "product-items">
+                      <!-- single product -->
+                      {% for pro in milt %}
+                      <div class = "product">
+                          <div class = "product-btns">
+                              <a href= "{% url 'update' pro.id %}" >
+                              <button type = "button" class = "btn-cart"> Update
+                                  
+                              </button>
+                              </a>
+                              <a href= "{% url 'delete' pro.id %}" >
+                              <button type = "button" class = "btn-buy"> Delete
+                                  
+                              </button>
+                              </a>
+                          </div>
+                          <div class = "product-content">
+                              <div class = "product-img">
+                                  {% if pro.image %}
+                                  <img src="{{pro.image.url}}" alt = "product image">
+                                  {% endif %}
+                              </div>
+                              <div class = "product-btns">
+                                  <a href= "{% url 'payment' %}" >
+                                  <button type = "button" class = "btn-buy"> buy now
+                                      <span><i class = "fas fa-shopping-cart"></i></span>
+                                  </button>
+                                  </a>
+                              </div>
+                          </div>
+      
+                          <div class = "product-info">
+                              <div class = "product-info-top">
+                                  <h2 class = "sm-title">{{pro.name}}</h2>
+                                  <div class = "rating">
+                                      <span><i class = "fas fa-star"></i></span>
+                                      <span><i class = "fas fa-star"></i></span>
+                                      <span><i class = "fas fa-star"></i></span>
+                                      <span><i class = "fas fa-star"></i></span>
+                                      <span><i class = "far fa-star"></i></span>
+                                  </div>
+                              </div>
+                              <a href = "#" class = "product-name">{{pro.content}}</a>
+                              <p class = "product-price">$ 1500.000</p>
+                              <p class = "product-price">$ {{pro.price}}</p>
+                          </div>
+                          <div class = "off-info">
+                              <h2 class = "sm-title">50% off</h2>
+                          </div>
+                      </div>
+                      {% endfor %}
+                      <!-- end of single product -->
+                     
+                  </div>
+              </div>
+          </div>
+          
+        
+        
+        </main>
+    
+    
+
+    
+
+</main>
+
+{% endblock %}    

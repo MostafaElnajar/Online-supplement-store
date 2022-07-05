@@ -1,0 +1,38 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
+<head>
+    <title>Login</title>
+    </head>
+
+<main>
+
+<div class = "mar"> 
+    
+    
+
+<div id="form">
+
+    <h3>Log-In</h3>
+<form method="POST" class="form-grid"> 
+    {% csrf_token %} 
+    <fieldset>
+        
+        <label for="email">Email:</label>
+        <input type="email" placeholder="Enter Email" name="email" id="email" >
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter Password" name="password" >
+                
+    </fieldset>
+      
+     
+    <button type="submit" id="submit" style= height:50%;> <span><a style="color: black;" class="button" > Login </a></span></button>
+     
+    <button type="button" id="submit" style= height:50%;> <span><a style="color: black;" href="{% url 'signup' %}" class="button" > Sign-Up</a></span></button>
+      
+</div>  
+
+</main>
+
+{% endblock %}  

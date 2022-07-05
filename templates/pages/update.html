@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
+<head>
+  <title>Update</title>
+  </head>
+  <div class = "mar">
+
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      
+      <form method="POST" >
+        {% csrf_token %}
+              {{form}}
+              <input type="submit" value = "Update product" class="btn ">
+                  
+        </form>
+       
+</div>
+  </div>
+</div>
+</div>
+{% endblock %}   
