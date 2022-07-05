@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"  href="{% static 'css/payment.css' %}">
+	<link rel="stylesheet"  href="{% static 'css/product.css' %}">
+	<script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	<meta name="description" content="Nfitness is an elite fitness center dedicated to helping clients achieve their fitness and nutrition goals.">
+	<link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Roboto+Slab&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+	<link rel="icon" type="images/png" sizes="32x32" href="{% static 'images/favicon-32.png' %}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+	<link rel="icon" sizes="192x192" href="{% static 'images/android-chrome-192.png' %}">
+</head>
+
+<body>
+ 
+{% include 'parts/header.html'%}
+{% include 'parts/nav.html'%}
+
+{% block content %}
+
+{% endblock %} 
+{% include 'parts/footer.html'%}
+    
+	
+</body>
+</html>    
